@@ -6,6 +6,12 @@ class Api::V1::SubscriptionsController < ApplicationController
     render json: SubscriptionSerializer.format_subscription(@subscription), status: 201
   end
 
+  def update
+    @subscription = Subscription.find(params[:id])
+    @subscription.update!(status: 'cancelled')
+    render json: SubscriptionSerializer.format_subscription(@subscription), status: 200
+  end
+
   private
 
   def subscription_params

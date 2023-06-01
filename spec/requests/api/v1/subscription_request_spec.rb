@@ -15,6 +15,9 @@ RSpec.describe 'Subscriptions', type: :request do
     end
     
     context 'when the request is valid' do
+      before do
+        Rails.application.load_seed
+      end
       before { post '/api/v1/subscriptions', params: valid_json, as: :json }
 
       it "creates a new subscription" do
@@ -26,6 +29,20 @@ RSpec.describe 'Subscriptions', type: :request do
         expect(pretty["data"]["attributes"]["status"]).to eq("active")
         expect(pretty["data"]["attributes"]["frequency"]).to eq("one")
       end
+    end
+  end
+
+  describe 'PATCH /api/v1/subscriptions/:id' do
+    before do
+      Rails.application.load_seed
+    end
+    before { patch '/api/v1/subscriptions/1' }
+
+    it "updates subscription status to cancelled" do
+      pretty = JSON.parse(response.body)
+
+      expect(response).to have_http_status(200)
+      expect(pretty["data"]["attributes"]["status"]).to eq("cancelled")
     end
   end
 end

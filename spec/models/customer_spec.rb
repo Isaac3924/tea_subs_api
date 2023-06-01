@@ -50,19 +50,19 @@ RSpec.describe Customer, type: :model do
                                           title: 'Green & Black Subscription',
                                           price: 15.99,
                                           status: "active",
-                                          frequency: 1
+                                          frequency: "one"
                                         )
     @subscription2 = Subscription.create!(
                                           title: 'Oolong & Green Subscription',
                                           price: 21.99,
                                           status: "cancelled",
-                                          frequency: 1
+                                          frequency: "one"
                                         )
     @subscription3 = Subscription.create!(
                                           title: 'All Three Subscription',
                                           price: 1.99,
                                           status: "active",
-                                          frequency: 1
+                                          frequency: "one"
                                         )
     # Assign teas to subscriptions
     @subscription1.teas << [@tea1, @tea2]
