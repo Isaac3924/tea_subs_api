@@ -17,15 +17,13 @@ tea_subs_api is a back end application api that manages the subscriptions statue
 9. For the third endpoint, , you will need to provide a JSON body to receive a response. The expected format for the body is as follows:
 ```json
 {
-    "data": {
-        "type": "subscriptions",
-        "id": 1,
-        "attributes": {
-            "title": "All Three Subscription",
-            "price": 15.99,
-            "status": "active",
-            "frequency": "one"
-        }
+    "customer_id": 1,
+    "subscriptions": {
+        "title": "Example Subscription",
+        "price": 178.99,
+        "status": "active",
+        "frequency": "Time is not a one way street",
+        "tea_ids": [1, 2, 3]
     }
 }
 ```
@@ -41,3 +39,5 @@ To run the tests, use the **'rspec'** command. Using simplecov, current coverage
 * Authorization
 
 * API_key
+
+* Further validations for data types
