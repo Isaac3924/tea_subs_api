@@ -10,7 +10,7 @@ class SubscriptionSerializer
           title: subscription.title,
           price: subscription.price,
           status: subscription.status,
-          frequency: subscription.frequency,
+          frequency: subscription.frequency
         }
       }
     }
