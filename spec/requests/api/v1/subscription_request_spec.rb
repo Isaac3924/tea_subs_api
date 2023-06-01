@@ -45,4 +45,23 @@ RSpec.describe 'Subscriptions', type: :request do
       expect(pretty["data"]["attributes"]["status"]).to eq("cancelled")
     end
   end
+
+  describe 'GET /api/v1/subscriptions?customer_id=2' do
+    before do
+      Rails.application.load_seed
+    end
+    before { get '/api/v1/subscriptions?customer_id=2' }
+
+    it "updates subscription status to cancelled" do
+      pretty = JSON.parse(response.body)
+
+      expect(response).to have_http_status(200)
+      expect(pretty["data"]).to be_an(Array)
+      expect(pretty["data"].count).to eq(2)
+      expect(pretty["data"][0]["data"]["attributes"]["title"]).to eq("Green & Black Subscription")
+      expect(pretty["data"][1]["data"]["attributes"]["title"]).to eq("Oolong & Green Subscription")
+      expect(pretty["data"][0]["data"]["attributes"]["status"]).to eq("active")
+      expect(pretty["data"][1]["data"]["attributes"]["status"]).to eq("cancelled")
+    end
+  end
 end

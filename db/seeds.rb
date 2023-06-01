@@ -44,7 +44,7 @@ subscription1 = Subscription.create!(
 subscription2 = Subscription.create!(
                                         title: 'Oolong & Green Subscription',
                                         price: 21.99,
-                                        status: "active",
+                                        status: "cancelled",
                                         frequency: "one"
                                       )
 
