@@ -1,9 +1,12 @@
 # tea_subs_api
+> Back end API with three requested endpoints.
+
 tea_subs_api is a back end application api that manages the subscriptions statues of customers and tea flavors within said subscriptions. It holds three endpoints currently that allows a front end user to call on them with provided information and see a proper return. This README will provide needed information to use this API as intended.
-## Features
-* Receives incoming data
-* Returns a JSON payload in the body of the request
+
+![](code_snippet.png)
+
 ## Setup
+
 1. Clone this repository to your local machine: **'git@github.com:Isaac3924/tea_subs_api.git'**
 2. Install dependencies: **'bundle install'**
 3. Configure the database by running **'rails db:setup'**
@@ -25,16 +28,12 @@ tea_subs_api is a back end application api that manages the subscriptions statue
 }
 ```
 
-## Testing
-To run the tests, use the **'rspec spec'** command in the terminal. Using simplecov, current coverage of code is at 100%.
+## Usage example
 
-## Future Features and Refactors
-* Endpoint to create Customers
+This application is fairly straightforward. Three endpoints to return needed information. Can be further updated with extra endpoints, but for now, works as an MVP.
 
-* Endpoint to create Tea
+## Meta
 
-* Authorization
+Isaac Alter – [@MyLinkedIn](https://www.linkedin.com/in/isaacalter/) – isaacalter3924@gmail.com
 
-* API_key
-
-* Further validations for data types
+[https://github.com/Isaac3924](https://github.com/Isaac3924/)
