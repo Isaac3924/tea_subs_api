@@ -8,6 +8,7 @@ gem "rails", "~> 7.0.4", ">= 7.0.4.3"
 
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", "~> 1.4"
+# Use PostgreSQL as the database for Active Record put in a d flag!
 gem 'pg'
 
 # Use the Puma web server [https://github.com/puma/puma]

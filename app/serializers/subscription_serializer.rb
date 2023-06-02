@@ -18,7 +18,7 @@ class SubscriptionSerializer
 
   def self.format_subscriptions(subscriptions)
     {
-      data: subscriptions.map { |subscription| format_subscription(subscription) }
+      subscription_list: subscriptions.map { |subscription| format_subscription(subscription) }
     }
   end
 end
