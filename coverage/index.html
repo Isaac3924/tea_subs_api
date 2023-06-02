@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2023-06-01T14:35:24-06:00">2023-06-01T14:35:24-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2023-06-02T10:01:32-06:00">2023-06-02T10:01:32-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -43,8 +43,8 @@
   </div>
 
   <div class="t-line-summary">
-    <b>137</b> relevant lines,
-    <span class="green"><b>137</b> lines covered</span> and
+    <b>140</b> relevant lines,
+    <span class="green"><b>140</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed. </span>
     (<span class="green">
   100.0%
@@ -73,11 +73,11 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#ee7b0a972a9b6b9972ada7a6e98224d932671bbf" class="src_link" title="app/controllers/api/v1/subscriptions_controller.rb">app/controllers/api/v1/subscriptions_controller.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">26</td>
-            <td class="cell--number">17</td>
-            <td class="cell--number">17</td>
+            <td class="cell--number">30</td>
+            <td class="cell--number">18</td>
+            <td class="cell--number">18</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">1.06</td>
+            <td class="cell--number">1.11</td>
             
           </tr>
         
@@ -227,9 +227,9 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#cf53e1348e6bca98bef71e5f934438e6ee3b6a72" class="src_link" title="config/routes.rb">config/routes.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">11</td>
-            <td class="cell--number">4</td>
-            <td class="cell--number">4</td>
+            <td class="cell--number">14</td>
+            <td class="cell--number">6</td>
+            <td class="cell--number">6</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
@@ -310,8 +310,8 @@
     
 
     <div class="t-line-summary">
-      <b>17</b> relevant lines.
-      <span class="green"><b>17</b> lines covered</span> and
+      <b>18</b> relevant lines.
+      <span class="green"><b>18</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -340,18 +340,18 @@
 
             
 
-            <code class="ruby">  def create</code>
+            <code class="ruby">  before_action :set_customer, only: %i[create index]</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="3">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="3">
+            
             
 
             
 
-            <code class="ruby">    @customer = Customer.find(params[:customer_id])</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -362,7 +362,7 @@
 
             
 
-            <code class="ruby">    @subscription = @customer.subscriptions.create!(subscription_params)</code>
+            <code class="ruby">  def create</code>
           </li>
         </div>
       
@@ -373,7 +373,7 @@
 
             
 
-            <code class="ruby">    @subscription.teas &lt;&lt; Tea.find(subscription_params[:tea_ids])</code>
+            <code class="ruby">    @subscription = @customer.subscriptions.create!(subscription_params)</code>
           </li>
         </div>
       
@@ -384,18 +384,18 @@
 
             
 
-            <code class="ruby">    render json: SubscriptionSerializer.format_subscription(@subscription), status: 201</code>
+            <code class="ruby">    @subscription.teas &lt;&lt; Tea.find(subscription_params[:tea_ids])</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="7">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="7">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">  end</code>
+            
+
+            <code class="ruby">    render json: SubscriptionSerializer.format_subscription(@subscription), status: 201</code>
           </li>
         </div>
       
@@ -406,18 +406,18 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="9">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="9">
+            
             
 
             
 
-            <code class="ruby">  def update</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -428,7 +428,7 @@
 
             
 
-            <code class="ruby">    @subscription = Subscription.find(params[:id])</code>
+            <code class="ruby">  def update</code>
           </li>
         </div>
       
@@ -439,7 +439,7 @@
 
             
 
-            <code class="ruby">    @subscription.update!(status: &#39;cancelled&#39;)</code>
+            <code class="ruby">    @subscription = Subscription.find(params[:id])</code>
           </li>
         </div>
       
@@ -450,18 +450,18 @@
 
             
 
-            <code class="ruby">    render json: SubscriptionSerializer.format_subscription(@subscription), status: 200</code>
+            <code class="ruby">    @subscription.update!(status: &#39;cancelled&#39;)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="13">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="13">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">  end</code>
+            
+
+            <code class="ruby">    render json: SubscriptionSerializer.format_subscription(@subscription), status: 200</code>
           </li>
         </div>
       
@@ -472,18 +472,18 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="15">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="15">
+            
             
 
             
 
-            <code class="ruby">  def index</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -494,7 +494,7 @@
 
             
 
-            <code class="ruby">    @customer = Customer.find(params[:customer_id])</code>
+            <code class="ruby">  def index</code>
           </li>
         </div>
       
@@ -571,7 +571,7 @@
 
             
 
-            <code class="ruby">  def subscription_params</code>
+            <code class="ruby">  def set_customer</code>
           </li>
         </div>
       
@@ -582,7 +582,7 @@
 
             
 
-            <code class="ruby">    params.require(:subscriptions).permit(:title, :price, :status, :frequency, tea_ids: [])</code>
+            <code class="ruby">    @customer = Customer.find(params[:customer_id])</code>
           </li>
         </div>
       
@@ -599,6 +599,50 @@
       
         <div>
           <li class="never" data-hits="" data-linenumber="26">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="27">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def subscription_params</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="28">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    params.require(:subscriptions).permit(:title, :price, :status, :frequency, tea_ids: [])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="29">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="30">
             
             
 
@@ -1219,7 +1263,7 @@
 
             
 
-            <code class="ruby">      data: subscriptions.map { |subscription| format_subscription(subscription) }</code>
+            <code class="ruby">      subscription_list: subscriptions.map { |subscription| format_subscription(subscription) }</code>
           </li>
         </div>
       
@@ -2988,8 +3032,8 @@
     
 
     <div class="t-line-summary">
-      <b>4</b> relevant lines.
-      <span class="green"><b>4</b> lines covered</span> and
+      <b>6</b> relevant lines.
+      <span class="green"><b>6</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -3084,18 +3128,18 @@
 
             
 
-            <code class="ruby">      resources :subscriptions, only: %i[create update index]</code>
+            <code class="ruby">      resources :customers, only: [] do</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="9">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="9">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">    end</code>
+            
+
+            <code class="ruby">        resources :subscriptions, only: %i[create index]</code>
           </li>
         </div>
       
@@ -3106,12 +3150,45 @@
 
             
 
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="11">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      resources :subscriptions, only: %i[update]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="12">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="13">
+            
+            
+
+            
+
             <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="11">
+          <li class="never" data-hits="" data-linenumber="14">
             
             
 
@@ -4385,7 +4462,7 @@
 
             
 
-            <code class="ruby">      before { post &#39;/api/v1/subscriptions&#39;, params: valid_json, as: :json }</code>
+            <code class="ruby">      before { post &#39;/api/v1/customers/1/subscriptions&#39;, params: valid_json, as: :json }</code>
           </li>
         </div>
       
@@ -4693,7 +4770,7 @@
 
             
 
-            <code class="ruby">  describe &#39;GET /api/v1/subscriptions?customer_id=2&#39; do</code>
+            <code class="ruby">  describe &#39;GET /api/v1/customers/2/subscriptions&#39; do</code>
           </li>
         </div>
       
@@ -4737,7 +4814,7 @@
 
             
 
-            <code class="ruby">    before { get &#39;/api/v1/subscriptions?customer_id=2&#39; }</code>
+            <code class="ruby">    before { get &#39;/api/v1/customers/2/subscriptions&#39; }</code>
           </li>
         </div>
       
@@ -4803,7 +4880,7 @@
 
             
 
-            <code class="ruby">      expect(pretty[&quot;data&quot;]).to be_an(Array)</code>
+            <code class="ruby">      expect(pretty[&quot;subscription_list&quot;]).to be_an(Array)</code>
           </li>
         </div>
       
@@ -4814,7 +4891,7 @@
 
             
 
-            <code class="ruby">      expect(pretty[&quot;data&quot;].count).to eq(2)</code>
+            <code class="ruby">      expect(pretty[&quot;subscription_list&quot;].count).to eq(2)</code>
           </li>
         </div>
       
@@ -4825,7 +4902,7 @@
 
             
 
-            <code class="ruby">      expect(pretty[&quot;data&quot;][0][&quot;data&quot;][&quot;attributes&quot;][&quot;title&quot;]).to eq(&quot;Green &amp; Black Subscription&quot;)</code>
+            <code class="ruby">      expect(pretty[&quot;subscription_list&quot;][0][&quot;data&quot;][&quot;attributes&quot;][&quot;title&quot;]).to eq(&quot;Green &amp; Black Subscription&quot;)</code>
           </li>
         </div>
       
@@ -4836,7 +4913,7 @@
 
             
 
-            <code class="ruby">      expect(pretty[&quot;data&quot;][1][&quot;data&quot;][&quot;attributes&quot;][&quot;title&quot;]).to eq(&quot;Oolong &amp; Green Subscription&quot;)</code>
+            <code class="ruby">      expect(pretty[&quot;subscription_list&quot;][1][&quot;data&quot;][&quot;attributes&quot;][&quot;title&quot;]).to eq(&quot;Oolong &amp; Green Subscription&quot;)</code>
           </li>
         </div>
       
@@ -4847,7 +4924,7 @@
 
             
 
-            <code class="ruby">      expect(pretty[&quot;data&quot;][0][&quot;data&quot;][&quot;attributes&quot;][&quot;status&quot;]).to eq(&quot;active&quot;)</code>
+            <code class="ruby">      expect(pretty[&quot;subscription_list&quot;][0][&quot;data&quot;][&quot;attributes&quot;][&quot;status&quot;]).to eq(&quot;active&quot;)</code>
           </li>
         </div>
       
@@ -4858,7 +4935,7 @@
 
             
 
-            <code class="ruby">      expect(pretty[&quot;data&quot;][1][&quot;data&quot;][&quot;attributes&quot;][&quot;status&quot;]).to eq(&quot;cancelled&quot;)</code>
+            <code class="ruby">      expect(pretty[&quot;subscription_list&quot;][1][&quot;data&quot;][&quot;attributes&quot;][&quot;status&quot;]).to eq(&quot;cancelled&quot;)</code>
           </li>
         </div>
       

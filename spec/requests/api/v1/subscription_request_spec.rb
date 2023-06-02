@@ -18,7 +18,7 @@ RSpec.describe 'Subscriptions', type: :request do
       before do
         Rails.application.load_seed
       end
-      before { post '/api/v1/subscriptions', params: valid_json, as: :json }
+      before { post '/api/v1/customers/1/subscriptions', params: valid_json, as: :json }
 
       it "creates a new subscription" do
         pretty = JSON.parse(response.body)
@@ -46,22 +46,22 @@ RSpec.describe 'Subscriptions', type: :request do
     end
   end
 
-  describe 'GET /api/v1/subscriptions?customer_id=2' do
+  describe 'GET /api/v1/customers/2/subscriptions' do
     before do
       Rails.application.load_seed
     end
-    before { get '/api/v1/subscriptions?customer_id=2' }
+    before { get '/api/v1/customers/2/subscriptions' }
 
     it "updates subscription status to cancelled" do
       pretty = JSON.parse(response.body)
 
       expect(response).to have_http_status(200)
-      expect(pretty["data"]).to be_an(Array)
-      expect(pretty["data"].count).to eq(2)
-      expect(pretty["data"][0]["data"]["attributes"]["title"]).to eq("Green & Black Subscription")
-      expect(pretty["data"][1]["data"]["attributes"]["title"]).to eq("Oolong & Green Subscription")
-      expect(pretty["data"][0]["data"]["attributes"]["status"]).to eq("active")
-      expect(pretty["data"][1]["data"]["attributes"]["status"]).to eq("cancelled")
+      expect(pretty["subscription_list"]).to be_an(Array)
+      expect(pretty["subscription_list"].count).to eq(2)
+      expect(pretty["subscription_list"][0]["data"]["attributes"]["title"]).to eq("Green & Black Subscription")
+      expect(pretty["subscription_list"][1]["data"]["attributes"]["title"]).to eq("Oolong & Green Subscription")
+      expect(pretty["subscription_list"][0]["data"]["attributes"]["status"]).to eq("active")
+      expect(pretty["subscription_list"][1]["data"]["attributes"]["status"]).to eq("cancelled")
     end
   end
 end
