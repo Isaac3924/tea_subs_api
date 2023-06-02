@@ -10,7 +10,8 @@ tea_subs_api is a back end application api that manages the subscriptions statue
 1. Clone this repository to your local machine: **'git@github.com:Isaac3924/tea_subs_api.git'**
 2. Install dependencies: **'bundle install'**
 3. Configure the database by running **'rails db:setup'**
-4. Seed the database by running **'rails db:seed'**
+4. Seed the database by running **'rails db:seed'** Here is a screenshot of the schema to further understand relations and attributes:
+![](schema.png)
 5. Start the server by running **'rails server'**
 6. Visit **'http://localhost:3000'** in your web browser to confirm that the app is running.
 7. The API endpoints available are a POST to **'http://localhost:3000/api/v1/customers/1/subscriptions'**, a GET to **'http://localhost:3000/api/v1/customers/2/subscriptions'**, and a PATCH to **'http://localhost:3000/api/v1/subscriptions'**. 
