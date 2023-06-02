@@ -6,7 +6,7 @@ tea_subs_api is a back end application api that manages the subscriptions statue
 * Returns incoming data in specific format
 * Returns a JSON payload in the body of the request
 ## Setup
-1. Clone this repository to your local machine: **'git@github.com:Isaac3924/2211_Whether-Sweater-Final-Project.git'**
+1. Clone this repository to your local machine: **'git@github.com:Isaac3924/tea_subs_api.git'**
 2. Install dependencies: **'bundle install'**
 3. Configure the database by running **'rails db:setup'**
 4. Seed the database by running **'rails db:seed'**
