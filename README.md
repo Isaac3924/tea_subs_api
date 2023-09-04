@@ -1,7 +1,7 @@
 # tea_subs_api
 > Back end API with three requested endpoints.
 
-tea_subs_api is a back end application api that manages the subscriptions statues of customers and tea flavors within said subscriptions. It holds three endpoints currently that allows a front end user to call on them with provided information and see a proper return. This README will provide needed information to use this API as intended.
+tea_subs_api is a back end application api that manages the subscriptions statusses of customers and tea flavors within said subscriptions. It holds three endpoints currently that allows a front end user to call on them with provided information and see a proper return. This README will provide needed information to use this API as intended.
 
 ![](code_snippet.png)
 
